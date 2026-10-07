@@ -96,7 +96,7 @@ export function createField({ canvas, mobile, reduced }) {
   const mat = new THREE.ShaderMaterial({
     transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
     uniforms: {
-      uTime: { value: 0 }, uPx: { value: renderer.getPixelRatio() }, uPulse: { value: 0 },
+      uTime: { value: 0 }, uPx: { value: renderer.getPixelRatio() }, uPulse: { value: 0 }, uGain: { value: 1.25 },
       uBlue: { value: new THREE.Vector3(30 / 255, 91 / 255, 1) }, uCyan: { value: new THREE.Vector3(0, 212 / 255, 1) },
     },
     vertexShader: `
@@ -111,12 +111,12 @@ export function createField({ canvas, mobile, reduced }) {
         gl_Position = projectionMatrix * mv;
       }`,
     fragmentShader: `
-      uniform vec3 uBlue; uniform vec3 uCyan; varying float vR;
+      uniform vec3 uBlue; uniform vec3 uCyan; uniform float uGain; varying float vR;
       void main() {
         float d = length(gl_PointCoord - 0.5);
         float a = smoothstep(0.5, 0.0, d);
         vec3 col = mix(uBlue, uCyan, smoothstep(0.35, 1.0, vR));
-        gl_FragColor = vec4(col * 1.25, a * 0.9);
+        gl_FragColor = vec4(col * uGain, a * 0.9);
       }`,
   });
   group.add(new THREE.Points(geo, mat));
@@ -140,6 +140,17 @@ export function createField({ canvas, mobile, reduced }) {
     L.attr.needsUpdate = true;
   }
 
+  // Tema claro: mezcla normal y colores mas oscuros para que se vea sobre blanco
+  let lineGain = 1;
+  function setTheme(t) {
+    const dark = t === 'dark', blend = dark ? THREE.AdditiveBlending : THREE.NormalBlending;
+    mat.blending = blend; mat.needsUpdate = true;
+    mat.uniforms.uGain.value = dark ? 1.25 : 1.0;
+    mat.uniforms.uCyan.value.set(0, dark ? 212 / 255 : 150 / 255, dark ? 1 : 199 / 255);
+    L1.m.blending = blend; L1.m.needsUpdate = true; L1.m.color.set(dark ? 0x3d74ff : 0x1e5bff);
+    L2.m.blending = blend; L2.m.needsUpdate = true; L2.m.color.set(dark ? 0x00d4ff : 0x0096c7);
+    lineGain = dark ? 1 : 1.2;
+  }
   let rotY = 0, rotX = 0, posX = 0;
   function render(time, p, mouse) {
     const t = reduced ? 0 : time * 0.001, e1 = ease(p), e3 = ease(p - 2), drift = (1 - e1) * 0.28 + 0.03;
@@ -158,8 +169,8 @@ export function createField({ canvas, mobile, reduced }) {
 
     const o1 = ease((p - 1.25) / 0.6) * (1 - ease((p - 2.3) / 0.5));
     const o2 = ease((p - 2.6) / 0.6);
-    L1.m.opacity = o1 * 0.28; L1.l.visible = o1 > 0.01; if (L1.l.visible) sync(L1);
-    L2.m.opacity = o2 * 0.22; L2.l.visible = o2 > 0.01; if (L2.l.visible) sync(L2);
+    L1.m.opacity = o1 * 0.28 * lineGain; L1.l.visible = o1 > 0.01; if (L1.l.visible) sync(L1);
+    L2.m.opacity = o2 * 0.22 * lineGain; L2.l.visible = o2 > 0.01; if (L2.l.visible) sync(L2);
 
     mat.uniforms.uTime.value = t;
     mat.uniforms.uPulse.value = ease(p - 3);
@@ -177,5 +188,5 @@ export function createField({ canvas, mobile, reduced }) {
     camera.updateProjectionMatrix();
   }
 
-  return { render, resize };
+  return { render, resize, setTheme };
 }

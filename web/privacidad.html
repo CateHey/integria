@@ -9,10 +9,11 @@
 <link rel="alternate" hreflang="es-PE" href="https://integriatec.com/privacidad">
 <link rel="alternate" hreflang="en" href="https://integriatec.com/en/privacy">
 <link rel="alternate" hreflang="x-default" href="https://integriatec.com/privacidad">
-<meta name="theme-color" content="#05070D">
+<meta name="theme-color" content="#F7FAFF">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.dataset.theme='dark'}catch(e){}</script>
 <link rel="stylesheet" href="/assets/css/styles.css">
 <script src="/assets/vendor/lenis.min.js" defer></script>
 <script type="module" src="/assets/js/app.js"></script>
@@ -27,11 +28,13 @@
   <a class="logo" href="/" aria-label="IntegrIA Tech, inicio"><b>Integr<span class="ia">IA</span></b><span class="tag">TECH</span></a>
   <nav class="nav-links" aria-label="Principal">
     <div class="nav-pages" id="nav-pages">
+      <a href="/">Inicio</a>
       <a href="/servicios">Servicios</a>
       <a href="/nosotros">Nosotros</a>
       <a href="/contacto">Contacto</a>
     </div>
     <a class="lang" href="/en/privacy" hreflang="en" aria-label="English version"><span>ES</span> / <span class="off">EN</span></a>
+    <button class="theme-btn" type="button" aria-label="Modo oscuro / claro" aria-pressed="false"><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-pages" aria-label="Abrir menú"><span></span><span></span></button>
   </nav>
 </header>

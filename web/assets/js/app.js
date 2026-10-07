@@ -103,24 +103,6 @@ if (cursorOn) {
   });
 }
 
-/* ---------- Contadores ---------- */
-if (!reduced && 'IntersectionObserver' in window) {
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((en) => {
-      if (!en.isIntersecting) return;
-      io.unobserve(en.target);
-      const el = en.target, to = +el.dataset.count, suffix = el.textContent.replace(/[0-9]/g, ''), s = performance.now();
-      const c = (now) => {
-        const t = Math.min(1, (now - s) / 1400), e = 1 - Math.pow(1 - t, 4);
-        el.textContent = Math.round(e * to) + suffix;
-        if (t < 1) requestAnimationFrame(c);
-      };
-      requestAnimationFrame(c);
-    });
-  }, { threshold: 0.6 });
-  document.querySelectorAll('[data-count]').forEach((el) => io.observe(el));
-}
-
 /* ---------- Animación propia de cada fase (01–04) ---------- */
 const steps = document.querySelectorAll('.step');
 if (steps.length && !reduced && 'IntersectionObserver' in window) {
@@ -220,6 +202,7 @@ async function startField() {
   try {
     const { createField } = await import('./particles.js');
     field = createField({ canvas, mobile, reduced });
+    field.setTheme(root.dataset.theme === 'dark' ? 'dark' : 'light');
     addEventListener('resize', () => field.resize());
     requestAnimationFrame(() => canvas.classList.add('ready'));
   } catch (e) { root.classList.add('no-gl'); }
@@ -246,3 +229,21 @@ function frame(time) {
   requestAnimationFrame(frame);
 }
 requestAnimationFrame(frame);
+
+/* ---------- Tema claro / oscuro ---------- */
+const themeBtn = document.querySelector('.theme-btn');
+const themeMeta = document.querySelector('meta[name="theme-color"]');
+function applyTheme(t) {
+  if (t === 'dark') root.dataset.theme = 'dark'; else delete root.dataset.theme;
+  if (themeMeta) themeMeta.content = t === 'dark' ? '#05070D' : '#F7FAFF';
+  if (themeBtn) themeBtn.setAttribute('aria-pressed', String(t === 'dark'));
+  if (field) field.setTheme(t);
+}
+if (themeBtn) {
+  themeBtn.setAttribute('aria-pressed', String(root.dataset.theme === 'dark'));
+  themeBtn.addEventListener('click', () => {
+    const t = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('theme', t); } catch (e) {}
+    applyTheme(t);
+  });
+}
