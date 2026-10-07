@@ -24,7 +24,6 @@
 <link rel="preload" href="/assets/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.dataset.theme='dark'}catch(e){}</script>
 <link rel="stylesheet" href="/assets/css/styles.css">
-<script>try{if(!sessionStorage.getItem('iv')){document.documentElement.classList.add('first-visit');sessionStorage.setItem('iv','1')}}catch(e){}</script>
 <script src="/assets/vendor/lenis.min.js" defer></script>
 <script type="module" src="/assets/js/app.js"></script>
 <script type="application/ld+json">
@@ -33,11 +32,6 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div id="loader" aria-hidden="true">
-  <div class="row mono"><span>Integr<span class="ia">IA</span> Tech</span><span>Lima · Peru</span></div>
-  <div class="count">000</div>
-  <div class="bar"><i></i></div>
-</div>
 <canvas id="gl" aria-hidden="true"></canvas>
 <div class="glow" aria-hidden="true"></div>
 <div class="grid-bg" aria-hidden="true"></div>
@@ -67,7 +61,6 @@
 <main id="main" class="home">
   <section class="hero hero--center" data-zone="dark">
     <img class="hero-mark fade-in" src="/favicon.svg" alt="" width="64" height="64">
-    <p class="eyebrow mono fade-in">Miraflores · Lima · Peru</p>
     <h1 class="h1-home">
       <span class="line accent"><span style="--i:0">Next-generation</span></span>
       <span class="line"><span style="--i:1">IT services</span></span>
@@ -150,6 +143,8 @@
             <li class="svc"><p class="name">Software development</p><p class="desc">Custom applications and integration between the systems you already have.</p><span class="arrow" aria-hidden="true">→</span></li>
             <li class="svc"><p class="name">Data and business intelligence</p><p class="desc">KPI dashboards with reconciled figures, updated automatically.</p><span class="arrow" aria-hidden="true">→</span></li>
             <li class="svc"><p class="name">Artificial intelligence</p><p class="desc">Automation of repetitive tasks and document processing.</p><span class="arrow" aria-hidden="true">→</span></li>
+            <li class="svc"><p class="name">Systems with AI agents and RAG</p><p class="desc">Assistants and agents integrated with your systems that answer and act using your own documents and data.</p><span class="arrow" aria-hidden="true">→</span></li>
+            <li class="svc"><p class="name">Websites and business portfolios</p><p class="desc">Corporate websites and product or service portfolios, ready to publish and easy to update.</p><span class="arrow" aria-hidden="true">→</span></li>
             <li class="svc"><p class="name">Licenses, hardware and cloud</p><p class="desc">Option comparison and supply of licenses, hardware and cloud services.</p><span class="arrow" aria-hidden="true">→</span></li>
           </ul>
         </div>
@@ -167,8 +162,7 @@
     </section>
 
     <section class="light-sec founders" data-zone="light" aria-labelledby="team-title">
-      <p class="kicker mono">Team</p>
-      <h2 class="big" id="team-title">An engineer, an administrator and a developer <em>in charge.</em></h2>
+      <h2 class="big" id="team-title">Team</h2>
       <div class="f-grid">
         <article class="founder">
           <div class="portrait" aria-hidden="true"><img src="/assets/img/gorky.jpg" alt=""></div>

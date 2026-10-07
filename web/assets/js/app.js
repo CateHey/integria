@@ -5,20 +5,6 @@ const mobile = matchMedia('(max-width: 860px)').matches;
 const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
 const lang = root.lang === 'en' ? 'en' : 'es';
 
-/* ---------- Pantalla de carga (solo primera visita) ---------- */
-const loader = document.getElementById('loader');
-if (loader && root.classList.contains('first-visit') && !reduced) {
-  const cnt = loader.querySelector('.count'), bar = loader.querySelector('.bar i');
-  const t0 = performance.now();
-  const tick = (now) => {
-    const t = Math.min(1, (now - t0) / 1200), e = 1 - Math.pow(1 - t, 3);
-    cnt.textContent = String(Math.round(e * 100)).padStart(3, '0');
-    bar.style.transform = `scaleX(${e})`;
-    if (t < 1) requestAnimationFrame(tick); else loader.classList.add('done');
-  };
-  requestAnimationFrame(tick);
-}
-
 /* ---------- Scroll suave ---------- */
 let lenis = null;
 if (!reduced && window.Lenis) {

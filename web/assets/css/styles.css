@@ -93,20 +93,6 @@ a { color: inherit; }
 }
 main { position: relative; z-index: 1; }
 
-/* ---------- Pantalla de carga ---------- */
-#loader {
-  position: fixed; inset: 0; z-index: 50; background: var(--bg);
-  display: none; flex-direction: column; justify-content: flex-end;
-  padding: var(--gutter); gap: 16px;
-}
-html.first-visit #loader { display: flex; animation: loaderOut .7s var(--ease) 1.6s forwards; }
-html.first-visit #loader.done { animation: loaderOut .7s var(--ease) forwards; }
-#loader .count { font-family: var(--display); font-weight: 300; font-size: clamp(64px, 16vw, 220px); line-height: .9; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
-#loader .bar { height: 1px; background: var(--line); position: relative; overflow: hidden; }
-#loader .bar i { position: absolute; inset: 0; background: linear-gradient(90deg, var(--blue), var(--cyan)); transform-origin: left; transform: scaleX(0); }
-#loader .row { display: flex; justify-content: space-between; color: var(--fg-2); }
-@keyframes loaderOut { to { transform: translateY(-100%); visibility: hidden; } }
-
 /* Transición entre idiomas */
 .sweep { position: fixed; inset: 0; z-index: 70; pointer-events: none; background: var(--blue); transform: scaleX(0); transform-origin: left; }
 html.leaving .sweep { transition: transform .45s var(--ease); transform: scaleX(1); }
@@ -170,7 +156,6 @@ h1 .accent > span {
   animation-delay: calc(var(--intro, .2s) + var(--i, 0) * .1s), 0s;
 }
 @keyframes shimmer { to { background-position: -300% 0; } }
-html.first-visit { --intro: 1.6s; }
 @keyframes rise { from { transform: translateY(110%); } to { transform: translateY(0); } }
 .fade-in { animation: fade 1s ease both; animation-delay: calc(var(--intro, .2s) + .45s); }
 @keyframes fade { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
@@ -595,7 +580,6 @@ main.home .foot { width: 100%; justify-content: center; }
   .fx-pulse svg { width: 160px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  html.first-visit #loader { display: none; }
   h1 .line > span, .fade-in, .scroll-hint i { animation: none; }
   .svc::before, .portrait, .btn, #gl { transition: none; }
 }
@@ -639,3 +623,7 @@ main.home .svc .arrow { display: none; }
 main.home .sec-blue { padding-top: clamp(40px, 5vw, 64px); }
 main.home .light-sec:not(.sec-blue) { padding-bottom: clamp(40px, 5vw, 64px); }
 main.home .sec-blue .svc-groups { margin-top: 0; }
+/* Nosotros: fotos redondas, pequenas y a color */
+.person { grid-template-columns: auto minmax(0, 1fr); }
+.person .portrait { width: 150px; height: 150px; aspect-ratio: 1; max-height: none; border-radius: 50%; padding: 0; align-items: center; justify-content: center; border: 2px solid rgba(30, 91, 255, .35); box-shadow: 0 0 0 6px rgba(30, 91, 255, .08); }
+.person .portrait img { filter: none; mix-blend-mode: normal; object-position: 50% 20%; }

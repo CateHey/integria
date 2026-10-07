@@ -24,7 +24,6 @@
 <link rel="preload" href="/assets/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.dataset.theme='dark'}catch(e){}</script>
 <link rel="stylesheet" href="/assets/css/styles.css">
-<script>try{if(!sessionStorage.getItem('iv')){document.documentElement.classList.add('first-visit');sessionStorage.setItem('iv','1')}}catch(e){}</script>
 <script src="/assets/vendor/lenis.min.js" defer></script>
 <script type="module" src="/assets/js/app.js"></script>
 <script type="application/ld+json">
@@ -33,11 +32,6 @@
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
-<div id="loader" aria-hidden="true">
-  <div class="row mono"><span>Integr<span class="ia">IA</span> Tech</span><span>Lima · Perú</span></div>
-  <div class="count">000</div>
-  <div class="bar"><i></i></div>
-</div>
 <canvas id="gl" aria-hidden="true"></canvas>
 <div class="glow" aria-hidden="true"></div>
 <div class="grid-bg" aria-hidden="true"></div>
@@ -67,7 +61,6 @@
 <main id="main" class="home">
   <section class="hero hero--center" data-zone="dark">
     <img class="hero-mark fade-in" src="/favicon.svg" alt="" width="64" height="64">
-    <p class="eyebrow mono fade-in">Miraflores · Lima · Perú</p>
     <h1 class="h1-home">
       <span class="line"><span style="--i:0">Consultoría de</span></span>
       <span class="line"><span style="--i:1">servicios de TI</span></span>
@@ -150,6 +143,8 @@
             <li class="svc"><p class="name">Desarrollo de software</p><p class="desc">Aplicaciones a medida e integración entre los sistemas que ya tiene.</p><span class="arrow" aria-hidden="true">→</span></li>
             <li class="svc"><p class="name">Datos e inteligencia de negocios</p><p class="desc">Tableros de indicadores con cifras conciliadas, actualizados automáticamente.</p><span class="arrow" aria-hidden="true">→</span></li>
             <li class="svc"><p class="name">Inteligencia artificial</p><p class="desc">Automatización de tareas repetitivas y lectura de documentos.</p><span class="arrow" aria-hidden="true">→</span></li>
+            <li class="svc"><p class="name">Sistemas con agentes de IA y RAG</p><p class="desc">Asistentes y agentes integrados a sus sistemas que responden y actúan con sus propios documentos y datos.</p><span class="arrow" aria-hidden="true">→</span></li>
+            <li class="svc"><p class="name">Páginas web y portafolios empresariales</p><p class="desc">Sitios corporativos y portafolios de productos o servicios, listos para publicar y fáciles de actualizar.</p><span class="arrow" aria-hidden="true">→</span></li>
             <li class="svc"><p class="name">Licencias, equipos y nube</p><p class="desc">Comparación de opciones y suministro de licencias, equipos y servicios en la nube.</p><span class="arrow" aria-hidden="true">→</span></li>
           </ul>
         </div>
@@ -167,8 +162,7 @@
     </section>
 
     <section class="light-sec founders" data-zone="light" aria-labelledby="team-title">
-      <p class="kicker mono">Equipo</p>
-      <h2 class="big" id="team-title">Un ingeniero, un administrador y una desarrolladora <em>al frente.</em></h2>
+      <h2 class="big" id="team-title">Equipo</h2>
       <div class="f-grid">
         <article class="founder">
           <div class="portrait" aria-hidden="true"><img src="/assets/img/gorky.jpg" alt=""></div>
