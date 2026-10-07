@@ -584,7 +584,7 @@ main.home .foot { width: 100%; justify-content: center; }
   .svc::before, .portrait, .btn, #gl { transition: none; }
 }
 
-/* ---------- Temas: claro (por defecto) y oscuro ---------- */
+/* ---------- Temas: oscuro (por defecto, data-theme="dark" en <html>) y claro ---------- */
 :root {
   --bg: #F7FAFF;
   --bg-grad: linear-gradient(180deg, #FFFFFF 0%, #EAF1FF 40%, #F7FAFF 100%);
