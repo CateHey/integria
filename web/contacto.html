@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contacto | IntegrIA Tech</title>
+<meta name="description" content="Escríbanos para conversar sobre su proyecto de TI. Atendemos en español e inglés desde Miraflores, Lima.">
+<link rel="canonical" href="https://integriatec.com/contacto">
+<link rel="alternate" hreflang="es-PE" href="https://integriatec.com/contacto">
+<link rel="alternate" hreflang="en" href="https://integriatec.com/en/contact">
+<link rel="alternate" hreflang="x-default" href="https://integriatec.com/contacto">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="IntegrIA Tech">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="Contacto | IntegrIA Tech">
+<meta property="og:description" content="Cuéntenos qué necesita.">
+<meta property="og:url" content="https://integriatec.com/contacto">
+<meta property="og:image" content="https://integriatec.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#05070D">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/styles.css">
+<script>try{if(!sessionStorage.getItem('iv')){document.documentElement.classList.add('first-visit');sessionStorage.setItem('iv','1')}}catch(e){}</script>
+<script src="/assets/vendor/lenis.min.js" defer></script>
+<script type="module" src="/assets/js/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div id="loader" aria-hidden="true">
+  <div class="row mono"><span>Integr<span class="ia">IA</span> Tech</span><span>Lima · Perú</span></div>
+  <div class="count">000</div>
+  <div class="bar"><i></i></div>
+</div>
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="glow" aria-hidden="true"></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"></div>
+<div class="sweep" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="logo" href="/" aria-label="IntegrIA Tech, inicio"><b>Integr<span class="ia">IA</span></b><span class="tag">TECH</span></a>
+  <nav class="nav-links" aria-label="Principal">
+    <div class="nav-pages" id="nav-pages">
+      <a href="/servicios">Servicios</a>
+      <a href="/nosotros">Nosotros</a>
+      <a href="/contacto" aria-current="page">Contacto</a>
+    </div>
+    <a class="lang" href="/en/contact" hreflang="en" aria-label="English version"><span>ES</span> / <span class="off">EN</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-pages" aria-label="Abrir menú"><span></span><span></span></button>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="contact contact-page" data-zone="dark" aria-labelledby="c-title">
+    <div>
+      <p class="kicker mono fade-in">Contacto</p>
+      <h1 id="c-title">
+        <span class="line"><span style="--i:0">Cuéntenos</span></span>
+        <span class="line accent"><span style="--i:1">qué necesita.</span></span>
+      </h1>
+    </div>
+
+    <div class="contact-grid fade-in">
+      <div class="contact-info">
+        <p>Escríbanos con una descripción breve del problema. Si podemos ayudar, le proponemos una reunión. Si no es lo nuestro, se lo decimos y, si podemos, le recomendamos a alguien.</p>
+        <div class="mail-row">
+          <span class="mail">hvarasg@gmail.com</span>
+          <a class="btn btn-primary magnetic" href="mailto:hvarasg@gmail.com">Enviar correo</a>
+        </div>
+        <p class="where mono">Miraflores, Lima · Perú<br>Atendemos en español e inglés</p>
+      </div>
+
+      <!-- Para activar el envío directo, pegar la clave de Web3Forms en data-key. Sin clave, el formulario abre el correo del visitante. -->
+      <form class="form" id="contact-form" data-key="" novalidate>
+        <div class="field"><label class="mono" for="f-name">Nombre *</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="field"><label class="mono" for="f-company">Empresa o institución</label><input id="f-company" name="company" type="text" autocomplete="organization"></div>
+        <div class="field"><label class="mono" for="f-email">Correo *</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label class="mono" for="f-phone">Teléfono</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="field full"><label class="mono" for="f-service">Tema</label>
+          <select id="f-service" name="service">
+            <option>Todavía no lo sé</option>
+            <option>Gobierno de TI y planificación</option>
+            <option>Dirección de proyectos (PMO)</option>
+            <option>Gestión de servicios de TI</option>
+            <option>Seguridad de la información / ISO 27001</option>
+            <option>Desarrollo de software</option>
+            <option>Datos e inteligencia de negocios</option>
+            <option>Inteligencia artificial</option>
+            <option>Licencias, equipos y nube</option>
+          </select>
+        </div>
+        <div class="field full"><label class="mono" for="f-msg">Mensaje *</label><textarea id="f-msg" name="message" required placeholder="Qué está pasando, desde cuándo y qué ha intentado."></textarea></div>
+        <input class="hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="check" for="f-ok"><input id="f-ok" name="privacy" type="checkbox" required><span>Acepto que IntegrIA Tech use estos datos para responder mi consulta, según la <a href="/privacidad">política de privacidad</a>.</span></label>
+        <div class="form-foot">
+          <button class="btn btn-primary" type="submit">Enviar mensaje</button>
+          <p class="status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+
+    <footer class="foot mono">
+      <span>INTEGRIA TECH S.A.C. · Miraflores, Lima</span>
+      <span>Partida SUNARP 16273018</span>
+      <a href="/privacidad">Privacidad</a>
+      <span>© 2026</span>
+    </footer>
+  </section>
+</main>
+</body>
+</html>

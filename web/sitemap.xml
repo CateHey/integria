@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://integriatec.com/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PE" href="https://integriatec.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://integriatec.com/en/"/></url>
+  <url><loc>https://integriatec.com/servicios</loc>
+    <xhtml:link rel="alternate" hreflang="es-PE" href="https://integriatec.com/servicios"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://integriatec.com/en/services"/></url>
+  <url><loc>https://integriatec.com/nosotros</loc>
+    <xhtml:link rel="alternate" hreflang="es-PE" href="https://integriatec.com/nosotros"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://integriatec.com/en/about"/></url>
+  <url><loc>https://integriatec.com/contacto</loc>
+    <xhtml:link rel="alternate" hreflang="es-PE" href="https://integriatec.com/contacto"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://integriatec.com/en/contact"/></url>
+  <url><loc>https://integriatec.com/privacidad</loc>
+    <xhtml:link rel="alternate" hreflang="es-PE" href="https://integriatec.com/privacidad"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://integriatec.com/en/privacy"/></url>
+  <url><loc>https://integriatec.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PE" href="https://integriatec.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://integriatec.com/en/"/></url>
+  <url><loc>https://integriatec.com/en/services</loc>
+    <xhtml:link rel="alternate" hreflang="es-PE" href="https://integriatec.com/servicios"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://integriatec.com/en/services"/></url>
+  <url><loc>https://integriatec.com/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="es-PE" href="https://integriatec.com/nosotros"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://integriatec.com/en/about"/></url>
+  <url><loc>https://integriatec.com/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="es-PE" href="https://integriatec.com/contacto"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://integriatec.com/en/contact"/></url>
+  <url><loc>https://integriatec.com/en/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="es-PE" href="https://integriatec.com/privacidad"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://integriatec.com/en/privacy"/></url>
+</urlset>

@@ -1,0 +1,6 @@
+# Documentos legales y personales: no subir al repositorio
+*.pdf
+*.docx
+
+# Vercel
+.vercel
